@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Segment, Item, Icon, List, Button } from 'semantic-ui-react'
 import EventAttendee from './EventAttendee'
+import { Link } from 'react-router-dom'
 
 class EventListItem extends Component {
 	render() {
@@ -44,8 +45,8 @@ class EventListItem extends Component {
 						content='Delete'
 					/>
 					<Button
-						onClick={() => selectEvent(event)}
-						as='a'
+						as={Link}
+						to={`/events/${event.id}`}
 						color='teal'
 						floated='right'
 						content='View'
