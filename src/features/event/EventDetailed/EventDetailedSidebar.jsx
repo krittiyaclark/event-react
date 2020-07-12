@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 const EventDetailedSidebar = ({ attendees }) => {
 	const isHost = false
 
-	console.log(attendees)
 	return (
 		<>
 			<Segment
