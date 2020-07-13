@@ -8,6 +8,7 @@ import EventDetailedChat from './EventDetailedChat'
 import EventDetailedSidebar from './EventDetailedSidebar'
 
 const EventDetailedPage = ({ event }) => {
+	console.log(event)
 	return (
 		<Grid>
 			<Grid.Column width={10}>
@@ -16,7 +17,7 @@ const EventDetailedPage = ({ event }) => {
 				<EventDetailedChat />
 			</Grid.Column>
 			<Grid.Column width={6}>
-				<EventDetailedSidebar attendees={event.attendees} />
+				<EventDetailedSidebar attendees={event.attendees && event.attendees} />
 			</Grid.Column>
 		</Grid>
 	)
