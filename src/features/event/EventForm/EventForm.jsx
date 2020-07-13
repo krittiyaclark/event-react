@@ -6,6 +6,17 @@ import { Segment, Form, Button, Grid, Header } from 'semantic-ui-react'
 import { createEvent, updateEvent } from '../eventActions.js'
 import cuid from 'cuid'
 import TextInput from '../../../app/common/form/TextInput.jsx'
+import TextArea from '../../../app/common/form/TextArea.jsx'
+import SelectInput from '../../../app/common/form/SelectInput.jsx'
+
+const category = [
+	{ key: 'drinks', text: 'Drinks', value: 'drinks' },
+	{ key: 'culture', text: 'Culture', value: 'culture' },
+	{ key: 'film', text: 'Film', value: 'film' },
+	{ key: 'food', text: 'Food', value: 'food' },
+	{ key: 'music', text: 'Music', value: 'music' },
+	{ key: 'travel', text: 'Travel', value: 'travel' },
+]
 
 class EventForm extends Component {
 	handleFormSubmit = (event) => {
@@ -45,12 +56,14 @@ class EventForm extends Component {
 							/>
 							<Field
 								name='category'
-								component={TextInput}
+								component={SelectInput}
+								options={category}
 								placeholder='What is your event about?'
 							/>{' '}
 							<Field
 								name='description'
-								component={TextInput}
+								component={TextArea}
+								row={3}
 								placeholder='Tell us about your event'
 							/>{' '}
 							<Header sub color='teal' content='Event Location Detail' />
